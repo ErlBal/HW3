@@ -5,27 +5,45 @@
 
 class Bank:
     def __init__(self, name, age, money, password):
-        self.name = name
-        self.age = age
-        self._money = money
+        self.__name = name
+        self.__age = age
+        self.__money = money
         self.__passw = password
 
-    def pname(self):
-        print(self.name, self._money)
+    @property
+    def name(self):
+        return self.__name
 
-    def __ppas(self):
-        print(self.__passw)
+    @name.setter
+    def name(self, value):
+        self.__name = value
 
-    def pasww(self):
-        self.__ppas()
+    @property
+    def age(self):
+        return self.__age
+
+    @age.setter
+    def age(self, value):
+        self.__age = value
+
+    @property
+    def money(self):
+        return self.__money
+
+    @money.setter
+    def money(self, value):
+        self.__money = value
+
+    @property
+    def password(self):
+        return self.__passw
+
+    @password.setter
+    def password(self, value):
+        self.__passw = value
 
 beka = Bank('бека', 20, 0, '12345678987543')
-beka._money = 123456789
-
-print(beka._money)
-beka.pname()
-
-beka.__passw = '0'
-print(beka.__passw)
-beka.pasww()
-print(dir(Bank))
+print(beka.name)
+print(beka.age)
+print(beka.money)
+print(beka.password)
